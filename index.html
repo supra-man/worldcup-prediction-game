@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 World Cup Predictor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ================= WELCOME ================= -->
+  <section id="screen-welcome" class="screen">
+    <div class="welcome-wrap">
+      <div class="welcome-badge">FIFA WORLD CUP &middot; USA &middot; MEXICO &middot; CANADA</div>
+      <h1 class="welcome-title">
+        <span class="title-year">2026</span>
+        <span class="title-main">WORLD CUP</span>
+        <span class="title-sub">PREDICTOR</span>
+      </h1>
+      <p class="welcome-tag">48 teams. 12 groups. 104 matches. One champion &mdash; <em>your call</em>.</p>
+      <form id="welcome-form" class="welcome-form" autocomplete="off">
+        <input id="name-input" type="text" maxlength="30" placeholder="Enter your name" required />
+        <button type="submit" class="btn btn-primary btn-big">Start Journey &nbsp;&rarr;</button>
+      </form>
+      <div class="welcome-pitch" aria-hidden="true">
+        <div class="pitch-line"></div>
+        <div class="pitch-circle"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GROUP STAGE ================= -->
+  <section id="screen-groups" class="screen hidden">
+    <header class="page-head">
+      <div>
+        <h2 class="page-title">Group Stage</h2>
+        <p class="page-sub" id="groups-greeting"></p>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-label"><span id="progress-count">0</span>/72 matches predicted</div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+    </header>
+    <div id="groups-grid" class="groups-grid"></div>
+    <div class="sticky-bar">
+      <span class="sticky-hint" id="sticky-hint">Predict every match to unlock the knockouts</span>
+      <button id="btn-generate" class="btn btn-primary" disabled>Generate Knockouts &nbsp;⚡</button>
+    </div>
+  </section>
+
+  <!-- ================= KNOCKOUT ================= -->
+  <section id="screen-knockout" class="screen hidden">
+    <header class="page-head">
+      <div>
+        <h2 class="page-title">Knockout Stage</h2>
+        <p class="page-sub">Round of 32 to the Final. Draws go to penalties &mdash; you pick the shootout winner.</p>
+      </div>
+      <button id="btn-back-groups" class="btn btn-ghost">&larr; Edit Groups</button>
+    </header>
+    <div id="champion-banner" class="champion-banner hidden"></div>
+    <div class="bracket-scroller">
+      <div id="bracket" class="bracket"></div>
+    </div>
+  </section>
+
+  <!-- ================= CELEBRATION ================= -->
+  <section id="screen-celebration" class="screen hidden">
+    <div class="celebrate-wrap">
+      <div class="trophy">🏆</div>
+      <h2 class="celebrate-title">CHAMPIONS!</h2>
+      <p class="celebrate-msg" id="celebrate-msg"></p>
+      <div class="podium" id="podium"></div>
+      <div class="celebrate-actions">
+        <button id="btn-download" class="btn btn-primary">Download Tie Sheet ⬇</button>
+        <button id="btn-view-bracket" class="btn btn-ghost">View Bracket</button>
+        <button id="btn-start-over" class="btn btn-danger">Start Over</button>
+      </div>
+    </div>
+  </section>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="app.js"></script>
+</body>
+</html>

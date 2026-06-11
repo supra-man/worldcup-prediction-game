@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "wc2026",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "4173", "--directory", "/Users/supradiptashah/Projects/wc2026-predictor"],
+      "port": 4173
+    }
+  ]
+}
